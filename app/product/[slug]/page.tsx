@@ -10,15 +10,16 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = products.find(p => p.slug === params.slug)
+export default async function ProductPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params
+  const product = products.find(p => p.slug === slug)
   
   if (!product) {
     notFound()
   }
 
   const relatedProducts = products
-    .filter(p => p.category === product.category && p.id !== product.id)
+    .filter(p => p.category.includes(product.category[0]) && p.slug !== product.slug)
     .slice(0, 3)
 
   return (
@@ -36,13 +37,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           {/* Product Image */}
           <div className="relative h-96 md:h-full min-h-[400px]">
             <Image
-              src={product.image}
-              alt={product.name}
+              src={product.images[0]}
+              alt={product.title}
               fill
               className="object-cover rounded-lg"
               priority
             />
-            {!product.available && (
+            {product.status === 'out' && (
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg">
                 <span className="bg-white px-4 py-2 rounded-lg text-lg font-semibold">
                   Немає в наявності
@@ -54,10 +55,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           {/* Product Details */}
           <div>
             <h1 className="text-3xl font-bold text-neutral-900 mb-2 font-serif">
-              {product.name}
+              {product.title}
             </h1>
-            {product.nameEnglish && (
-              <p className="text-lg text-neutral-500 mb-4">{product.nameEnglish}</p>
+            {product.titleEn && (
+              <p className="text-lg text-neutral-500 mb-4">{product.titleEn}</p>
             )}
             
             <div className="mb-6">
@@ -68,7 +69,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
 
             <div className="mb-6">
-              {product.available ? (
+              {product.status !== 'out' ? (
                 <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                   В наявності
                 </span>
@@ -81,25 +82,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
             <div className="mb-8">
               <h2 className="text-lg font-semibold text-neutral-900 mb-3">Опис</h2>
-              <p className="text-neutral-600 leading-relaxed">{product.description}</p>
+              <p className="text-neutral-600 leading-relaxed">{product.longDescription}</p>
             </div>
 
-            {product.ingredients && (
-              <div className="mb-8">
-                <h2 className="text-lg font-semibold text-neutral-900 mb-3">Склад</h2>
-                <p className="text-neutral-600">{product.ingredients}</p>
-              </div>
-            )}
 
-            {product.agingTime && (
-              <div className="mb-8">
-                <h2 className="text-lg font-semibold text-neutral-900 mb-3">Витримка</h2>
-                <p className="text-neutral-600">{product.agingTime}</p>
-              </div>
-            )}
 
             {/* Order Actions */}
-            {product.available && (
+            {product.status !== 'out' && (
               <div className="border-t pt-6">
                 <p className="text-neutral-600 mb-4">
                   Для замовлення зв'яжіться з нами:
@@ -133,19 +122,19 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedProducts.map((relatedProduct) => (
-                <Link key={relatedProduct.id} href={`/product/${relatedProduct.slug}`}>
+                <Link key={relatedProduct.slug} href={`/product/${relatedProduct.slug}`}>
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden cursor-pointer group">
                     <div className="relative h-48 w-full">
                       <Image
-                        src={relatedProduct.image}
-                        alt={relatedProduct.name}
+                        src={relatedProduct.images[0]}
+                        alt={relatedProduct.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-4">
                       <h3 className="font-semibold text-lg text-neutral-900 mb-1">
-                        {relatedProduct.name}
+                        {relatedProduct.title}
                       </h3>
                       <p className="text-lg font-bold text-primary-600">
                         {relatedProduct.price}

@@ -78,10 +78,10 @@ export default function ContactsPage() {
             </div>
           </div>
 
-          {/* Payment & Delivery */}
+          {/* How to Order & Payment */}
           <div className="bg-white rounded-xl p-6 md:p-8">
             <h2 className="text-xl font-bold text-neutral-900 mb-6 font-serif">
-              Оплата та доставка
+              Як замовити та оплата
             </h2>
 
             <div className="space-y-6">
@@ -91,14 +91,26 @@ export default function ContactsPage() {
                   Способи оплати
                 </h3>
                 <ul className="space-y-2 text-neutral-600">
-                  <li>• Картка ПриватБанку</li>
-                  <li>• Картка Monobank</li>
-                  <li>• Картка Кредобанк</li>
-                  <li>• Картка ПУМБ</li>
-                  <li>• Картка Банк Восток</li>
-                  <li>• PayPal</li>
+                  <li>• Картка ПриватБанку: 5169 3305 2420 1179</li>
+                  <li>• Картка Monobank: 5375 4112 0412 6266</li>
+                  <li>• PayPal: dobrozhanskiy@gmail.com</li>
                   <li>• SWIFT перекази (UAH, USD, EUR, PLN)</li>
                 </ul>
+                <p className="text-sm text-neutral-500 mt-3">
+                  * Оплата на картку здійснюється після підтвердження замовлення
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-neutral-900 mb-3">Як замовити</h3>
+                <div className="space-y-2 text-neutral-600">
+                  <p>• Замовлення підтверджується автоматично після отримання листа на email</p>
+                  <p>• Відправка замовлення наступного дня після отримання</p>
+                  <p>• Два способи оплати: післяплата або на банківську картку</p>
+                  <p>• При оплаті на картку відправляємо "на довіру" без наложки</p>
+                  <p>• Наступного дня отримаєте SMS з ТТН, сумою та реквізитами для оплати</p>
+                  <p>• Ціна в кошику орієнтовна, реальна вартість залежить від фактичної ваги</p>
+                </div>
               </div>
 
               <div>
@@ -108,8 +120,12 @@ export default function ContactsPage() {
                     <strong>Нова Пошта</strong> - доставка по всій Україні
                   </p>
                   <p className="text-sm text-neutral-600 mt-2">
-                    Відправка в день замовлення або наступного дня. 
+                    Відправка в день замовлення або наступного дня.
                     Термін доставки 1-2 дні.
+                  </p>
+                  <p className="text-sm text-neutral-600 mt-2">
+                    <strong>Сири спокійно переносять доставку!</strong>
+                    Потужна мікрофлора захищає сир, як у хамона.
                   </p>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { getBlogPost, getLatestPosts, blogPosts } from '@/lib/blog-data'
 import { Calendar, User, ChevronLeft, ArrowRight } from 'lucide-react'
 import { Metadata } from 'next'
+import ReactMarkdown from 'react-markdown'
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -106,30 +107,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
             {/* Article Content */}
             <div className="prose prose-lg prose-neutral max-w-none">
-              <div dangerouslySetInnerHTML={{ 
-                __html: post.content
-                  .split('\n')
-                  .map(line => {
-                    // Convert markdown-style headers to HTML
-                    if (line.startsWith('### ')) {
-                      return `<h3 class="text-lg font-bold mt-6 mb-3">${line.slice(4)}</h3>`
-                    } else if (line.startsWith('## ')) {
-                      return `<h2 class="text-xl font-bold mt-8 mb-4">${line.slice(3)}</h2>`
-                    } else if (line.startsWith('# ')) {
-                      return `<h1 class="text-2xl font-bold mt-8 mb-4">${line.slice(2)}</h1>`
-                    } else if (line.startsWith('- ')) {
-                      return `<li class="ml-6">${line.slice(2)}</li>`
-                    } else if (line.startsWith('**') && line.endsWith('**')) {
-                      return `<p><strong>${line.slice(2, -2)}</strong></p>`
-                    } else if (line === '') {
-                      return '<br/>'
-                    } else {
-                      return `<p class="mb-4">${line}</p>`
-                    }
-                  })
-                  .join('\n')
-                  .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              }} />
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </div>
 
             {/* Share Section */}

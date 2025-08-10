@@ -8,10 +8,13 @@ import { ArrowRight, Star, Award, Truck, Shield } from 'lucide-react'
 export default function Home() {
   const featuredProducts = getFeaturedProducts()
   const cheeseSets = products.filter(p => p.category.includes('set'))
-  const spirits = products.filter(p => p.category === 'spirits')
+  const spirits = products.filter(p => p.category.includes('drink'))
 
   return (
     <>
+      <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 9999, background: 'red', color: 'white', padding: '10px' }}>
+        Debug: Main page rendered
+      </div>
       <Hero />
 
       {/* Featured Products */}
@@ -107,29 +110,27 @@ export default function Home() {
                 <div className="bg-neutral-800 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer">
                   <div className="relative h-64 bg-gradient-to-br from-neutral-700 to-neutral-900">
                     <Image
-                      src={spirit.image}
-                      alt={spirit.name}
+                      src={spirit.images[0]}
+                      alt={spirit.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-contain p-8"
                     />
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold font-serif mb-2">
-                      {spirit.name}
+                      {spirit.title}
                     </h3>
-                    {spirit.nameEnglish && (
-                      <p className="text-neutral-400 text-sm mb-3">{spirit.nameEnglish}</p>
+                    {spirit.titleEn && (
+                      <p className="text-neutral-400 text-sm mb-3">{spirit.titleEn}</p>
                     )}
                     <p className="text-neutral-300 text-sm mb-4 line-clamp-2">
-                      {spirit.description}
+                      {spirit.shortDescription}
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-2xl font-bold text-cheese-golden">
                         {spirit.price}
                       </span>
-                      {spirit.volume && (
-                        <span className="text-neutral-400 text-sm">{spirit.volume}</span>
-                      )}
                     </div>
                   </div>
                 </div>
