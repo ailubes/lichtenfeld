@@ -1,0 +1,482 @@
+{
+  "site_info": {
+    "name": "Органічна ферма Ліхтенфельд",
+    "name_english": "Organic Farm Lichtenfeld",
+    "url": "https://lichtenfeld.com.ua",
+    "description": "Ukrainian organic farm producing artisan cheeses and spirits",
+    "founded": "2016",
+    "location": {
+      "village": "Кудрявка",
+      "village_english": "Kudryavka",
+      "district": "Березівський район",
+      "region": "Одеська область",
+      "address": "вул. Квіткова, 7, с. Кудрявка, Березівський район, Одеська область, 67310, Україна",
+      "coordinates": "Historical German settlement, now Ukrainian village"
+    }
+  },
+  "founder": {
+    "name": "Олександр Доброжанський",
+    "name_english": "Alexander Dobrozhanski",
+    "background": [
+      "Former corporate marketing director in supermarket chains",
+      "Multiple higher education degrees",
+      "ATO veteran (2014-2016)",
+      "Sniper instructor - trained nearly 100 Ukrainian snipers",
+      "Studied cheesemaking in Switzerland",
+      "Sorbonne University graduate"
+    ],
+    "military_service": "Served in Anti-Terrorist Operation (ATO) 2014-2016",
+    "philosophy": "Creating transparent, ecological, handmade products with love",
+    "story": "Moved from Odessa to rural village after military service to provide ecological environment for family and create high-quality food products"
+  },
+  "contact_information": {
+    "phones": [
+      "+380671328859 (Олександр, сировар, засновник)",
+      "+380961314758 (Олена, логістика, фінанси)"
+    ],
+    "email": "dobrozhanskiy@gmail.com",
+    "social_media": {
+      "viber": "380671328859",
+      "whatsapp": "380671328859",
+      "facebook_messenger": "https://m.me/organicfarmlichtenfeld",
+      "telegram": "https://t.me/organicfarmlichtenfeld"
+    },
+    "payment_methods": [
+      "PrivatBank card",
+      "Monobank card", 
+      "Kredobank card",
+      "PUMB card",
+      "Vostok bank card",
+      "PayPal",
+      "SWIFT transfers (UAH, USD, EUR, PLN)"
+    ]
+  },
+  "products": {
+    "cheese_sets": [
+      {
+        "name": "Сирний сет \"Му\"",
+        "name_english": "Cow Cheese Set \"Mu\"",
+        "description": "9 varieties of cow's milk cheeses",
+        "price": "486 UAH",
+        "availability": "Limited",
+        "type": "cow_cheese_set"
+      },
+      {
+        "name": "Сирний сет \"Мє\"",
+        "name_english": "Goat Cheese Set \"Mie\"", 
+        "description": "6 varieties of goat's milk cheeses",
+        "price": "576 UAH",
+        "availability": "In Stock",
+        "type": "goat_cheese_set"
+      }
+    ],
+    "cow_cheeses": [
+      {
+        "name": "Чеддер",
+        "name_english": "Cheddar",
+        "description": "Handmade using 4-hour traditional 'cheddaring' process",
+        "price": "54 UAH",
+        "availability": "In Stock",
+        "type": "hard_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Ліхтенфельд",
+        "name_english": "Lichtenfeld (Gruyère)",
+        "description": "Classic Swiss-style aged cow's milk cheese. Recipe over 800 years old",
+        "price": "54 UAH", 
+        "availability": "In Stock",
+        "type": "hard_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Монблан",
+        "name_english": "Monblan (Emmentaler)",
+        "description": "Alpine-style hard aged cow's milk cheese",
+        "price": "54 UAH",
+        "availability": "In Stock", 
+        "type": "hard_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Ярослав",
+        "name_english": "Yaroslav (Jarlsberg)",
+        "description": "Norwegian-style hard aged cow's milk cheese",
+        "price": "54 UAH",
+        "availability": "In Stock",
+        "type": "hard_cheese", 
+        "milk_type": "cow"
+      },
+      {
+        "name": "Каберне",
+        "name_english": "Cabernet (Ubriaco)",
+        "description": "Gruyère washed twice daily in homemade Cabernet wine",
+        "price": "54 UAH",
+        "availability": "Limited",
+        "type": "wine_washed_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Рамсес", 
+        "name_english": "Ramses",
+        "description": "Aged cow's milk cheese, smoked 14 days on cherry and apricot",
+        "price": "54 UAH",
+        "availability": "Limited",
+        "type": "smoked_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Камбоцола",
+        "name_english": "Cambozola",
+        "description": "Semi-soft cow's milk cheese with multiple mold types",
+        "price": "54 UAH",
+        "availability": "Limited",
+        "type": "soft_mold_cheese",
+        "milk_type": "cow"
+      },
+      {
+        "name": "Альбіон",
+        "name_english": "Albion (Stilton)",
+        "description": "Aged cow's milk blue cheese",
+        "price": "54 UAH", 
+        "availability": "In Stock",
+        "type": "blue_cheese",
+        "milk_type": "cow"
+      }
+    ],
+    "goat_cheeses": [
+      {
+        "name": "Кабралес",
+        "name_english": "Cabrales",
+        "description": "Це пліснявий сир з козиного молока, який робиться з вечірнього та вранішного молока",
+        "price": "64 UAH",
+        "availability": "In Stock",
+        "type": "blue_cheese",
+        "milk_type": "goat"
+      },
+      {
+        "name": "П'яна Горроча",
+        "name_english": "Pyana Gorrocha (Queso de Murcia al Vino)",
+        "description": "Сир Garrotxa Cabra ми готуємо з непастеризованого козиного молока... після тримісячного дозрівання сир йде на 4 тижні в довгий винне плавання",
+        "price": "64 UAH",
+        "availability": "Limited Availability",
+        "type": "wine_aged_cheese",
+        "milk_type": "goat"
+      },
+      {
+        "name": "Гарроча",
+        "name_english": "Garrotxa",
+        "description": "Сир Garrotxa ми готуємо з непастеризованого козиного молока Зааненінських та Нубійських кіз за традиційним Каталонському рецептом",
+        "price": "64 UAH",
+        "availability": "Limited Availability",
+        "type": "hard_cheese",
+        "milk_type": "goat"
+      },
+      {
+        "name": "Бебі Фумадо",
+        "name_english": "Bebé Fumado",
+        "description": "Маленькі головки козиного сиру витримую три місяці, а потім копчу на холодному диму пару тижнів",
+        "price": "64 UAH",
+        "availability": "In Stock",
+        "type": "smoked_cheese",
+        "milk_type": "goat"
+      },
+      {
+        "name": "Копчена Горроча",
+        "name_english": "Kopchena Gorrocha (Gorrocha Ahumada)",
+        "description": "Цей козиний сир ми робимо з витриманної Горрочі шляхом двотижневого холодного копчення. Для диму використовуємо стружки з черешні",
+        "price": "64 UAH",
+        "availability": "In Stock",
+        "type": "smoked_cheese",
+        "milk_type": "goat"
+      },
+      {
+        "name": "Аркоіріс",
+        "name_english": "Arcoiris",
+        "description": "Аркоіріс – це козиний пліснявий сир Кабралес вимочений у вині. Аркоіріс - це райдуга смаку :)",
+        "price": "64 UAH",
+        "availability": "In stock",
+        "type": "wine_washed_blue_cheese",
+        "milk_type": "goat"
+      }
+    ],
+    "spirits_and_drinks": [
+      {
+        "name": "Ван Гог",
+        "name_english": "Van Gogh (Absinthe)",
+        "description": "Абсент я роблю так, як його робили 200 рокі тому у Франції. Рецепт: 'Dale Pendell's Pharmako/Poeia' 1872 р.",
+        "volume": "200ml",
+        "price": "250 UAH",
+        "availability": "In stock",
+        "type": "absinthe",
+        "alcohol_content": "High"
+      },
+      {
+        "name": "Бурбон",
+        "name_english": "Bourbon",
+        "description": "Напій створений на основі дистилята з кукурудзи та ячменю в пропорції 70%-30%. Діжка 100 літрів, з білого витриманого карпатського дубу",
+        "volume": "200ml", 
+        "price": "230 UAH",
+        "availability": "In stock",
+        "type": "whiskey",
+        "ingredients": "70% corn, 30% barley",
+        "aging": "Carpathian oak barrel, 100L"
+      },
+      {
+        "name": "Айвовий шнапс",
+        "name_english": "Quitte Schnapps",
+        "description": "Triple-distilled quince juice without added sugar or alcohol, recipe from Croatia",
+        "volume": "200ml",
+        "price": "185 UAH", 
+        "availability": "In stock",
+        "type": "fruit_schnapps",
+        "base": "quince",
+        "distillation": "triple-distilled"
+      },
+      {
+        "name": "Джин",
+        "name_english": "Gin (Bombay Sapphire style)",
+        "description": "Made from Thomas Dakin's 1761 recipe, complex flavor with pine, citrus, herbal notes",
+        "volume": "200ml",
+        "price": "195 UAH",
+        "availability": "In stock", 
+        "type": "gin",
+        "recipe_year": "1761",
+        "flavor_profile": "pine, citrus, herbal"
+      },
+      {
+        "name": "Шнапс",
+        "name_english": "Firmovyi Schnapps",
+        "description": "Soft, aromatic drink made from homemade grain alcohol and herbs",
+        "volume": "200ml",
+        "price": "125 UAH",
+        "availability": "Out of stock",
+        "type": "herbal_schnapps",
+        "base": "grain alcohol",
+        "ingredients": "herbs"
+      }
+    ]
+  },
+  "production_philosophy": {
+    "core_values": [
+      "100% ecological ingredients",
+      "No preservatives or artificial flavors", 
+      "Handmade products",
+      "Transparent ingredient sourcing",
+      "Traditional methods",
+      "Non-pasteurized milk",
+      "Love in production"
+    ],
+    "methods": [
+      "Alpine cheese protection techniques",
+      "Traditional Swiss cheesemaking",
+      "Cold smoking with cherry wood",
+      "Wine washing and aging",
+      "Natural mold cultivation",
+      "Small batch production"
+    ],
+    "location_benefits": [
+      "Far from industrial zones",
+      "Fertile black soil",
+      "Southern sunlight",
+      "Clean environment",
+      "Historical German settlement heritage"
+    ]
+  },
+  "customer_reviews": {
+    "overall_rating": "4.8/5",
+    "total_reviews": 331,
+    "recent_reviews": [
+      {
+        "customer": "Oleksandr",
+        "date": "Aug 7, 2025",
+        "product": "Mu cheese set",
+        "feedback": "Family enjoyed the set, especially his sisters. Praised the intense flavor. Missing Lichtenfeld cheese noted."
+      },
+      {
+        "customer": "Bozhena", 
+        "date": "Jul 31, 2025",
+        "feedback": "Criticized packaging and delivery. Cheese needed over 24 hours to develop proper aroma. Eventually found the cheese tasty and intense."
+      },
+      {
+        "customer": "Halyna Vernyhora",
+        "date": "Jul 26, 2025",
+        "feedback": "Excited about cheese aromas. Described as a 'gastronomic orgasm'. Praised for gourmet quality."
+      },
+      {
+        "customer": "Oksana Konovalenko",
+        "date": "Jun 27, 2025",
+        "feedback": "Criticized Cabrales (rancid butter taste). Found Albion too salty."
+      },
+      {
+        "customer": "Viktor & Valentyna Soltysiak",
+        "date": "Apr 6, 2025",
+        "feedback": "Received 7/9 cheeses in set. Praised changing flavors. Appreciated craftsmanship."
+      }
+    ],
+    "common_themes": [
+      "Intense, unique flavors",
+      "Some packaging/delivery concerns", 
+      "Recommendation to let cheese 'breathe'",
+      "Passionate customer base"
+    ]
+  },
+  "press_coverage": [
+    {
+      "publication": "Думская (Dumskaya)",
+      "original_outlet": "Цензор.нет (Censor.net)",
+      "journalist": "Александр Гиманов",
+      "title": "С плесенью и любовью: как в самой молодой немецкой колонии Украины патриот швейцарский сыр делает",
+      "key_quotes": [
+        "I decided to return to the village and build my Country, with a capital C, here in Kudryavka, with my own labor.",
+        "It's very difficult to maintain calm when returning from the front and seeing idle people with shawarma."
+      ],
+      "highlights": [
+        "Dobrozhanski is a veteran who fought in Donbas",
+        "Started cheese-making in 2016 after military service", 
+        "Located in Kudryavka, a young German settlement in Ukraine",
+        "Produces 8 cheese varieties, including hard and blue-veined cheeses",
+        "Uses ecological Alpine cheese protection techniques"
+      ]
+    },
+    {
+      "publication": "Agravery.com",
+      "author": "Oksana Korol (Deputy Editor-in-Chief)",
+      "title": "Oleksandr Dobrozhanskyy: Facebook and Instagram do not sell, my cheeses are sold by the website",
+      "key_points": [
+        "Operates three cheesemaking facilities under the Lichtenfeld brand",
+        "Website receives 12-18,000 daily visitors", 
+        "Generates approximately 1 million UAH in annual sales",
+        "Minimal advertising costs ($0.50-$20 per day)",
+        "Focuses on direct sales through website"
+      ],
+      "business_philosophy": [
+        "The main thing for the success of a project is not to make nice and useful products, but to know how to sell them",
+        "Facebook and Instagram do not sell - the website sells. Social networks generate traffic to the site",
+        "People want to buy from people, buy from a legend!"
+      ]
+    },
+    {
+      "publication": "ArmiyaINFORM",
+      "focus": "Military background and transition",
+      "key_details": [
+        "Joined UNSO (Ukrainian Nationalist Self-Defense) in autumn 2014",
+        "Trained nearly 100 Ukrainian snipers over 2.5 years",
+        "Served as a sniper instructor",
+        "Transformed from Russian-speaking Odesa manager to Ukrainian nationalist",
+        "After military service, returned to family in 2016",
+        "Studied cheesemaking in Switzerland"
+      ],
+      "philosophy": "On the war, I began to understand what truly has value. It's not cars and money, but family."
+    }
+  ],
+  "blog_posts": [
+    {
+      "title": "«Пока научился делать сыр, испортил тонну молока»: как ветеран АТО стал успешным сыроваром",
+      "author": "Igor OSIPCHUK, 'FACTS' newspaper",
+      "date": "September 2, 2019",
+      "key_points": [
+        "Aleksandr Dobrozhanski transitioned from corporate life to cheesemaking",
+        "Learned through experimentation and Swiss farm training",
+        "Produces 8 types of cheese avoiding protected brand names",
+        "Works with local farmers offering better milk prices",
+        "Willing to teach cheesemaking to ATO veterans for free",
+        "Startup costs: 40-50,000 UAH for equipment, 50-80,000 UAH working capital"
+      ],
+      "notable_quote": "Пока научился делать сыр, испортил около тонны молока"
+    },
+    {
+      "title": "Альфа",
+      "author": "Олександр Доброжанський", 
+      "date": "August 31, 2019",
+      "topic": "Farm life story about dog Alpha",
+      "content": "Meet Alpha, a Bullmastiff weighing ~80kg. Alpha refuses fresh pork bones but waits for cheese. Daily production includes waste and rejected items - not all cheese heads earn the #Lichtenfeld honor. Such is the hard life in the village.",
+      "tags": ["#organicfarm", "#Kudryavka", "#Lichtenfeld"]
+    }
+  ],
+  "name_significance": {
+    "origin": "Original name of German settler village in the area before 20th century",
+    "translation": "Neighboring village Yasnopillia directly translates from German as 'Lichtenfeld'",
+    "cultural_context": "Located where many ethnic Germans resettled in the 1990s",
+    "meaning": "Preserving cultural heritage through food production"
+  },
+  "delivery_and_ordering": {
+    "delivery_service": "Nova Poshta (nationwide)",
+    "ordering_methods": [
+      "Phone orders",
+      "Online cart system", 
+      "Social media messaging"
+    ],
+    "coverage": "Ukraine-wide delivery available"
+  },
+  "images_downloaded": {
+    "logo": "/public/images/lichtenfeld-logo.png",
+    "founder": "/public/images/founder/alexander-dobrozhanski-portrait.png", 
+    "cheese_sets": [
+      "/public/images/products/cheese-set-mu.jpg",
+      "/public/images/products/cheese-set-goat.jpg"
+    ],
+    "cow_cheeses": [
+      "/public/images/products/cheese-cheddar.jpg",
+      "/public/images/products/cheese-lichtenfeld-gruyere-1.jpg",
+      "/public/images/products/cheese-lichtenfeld-gruyere-2.jpg", 
+      "/public/images/products/cheese-lichtenfeld-gruyere-4.jpg",
+      "/public/images/products/cheese-lichtenfeld-gruyere-5.jpg",
+      "/public/images/products/cheese-monblan-emmentaler.jpg",
+      "/public/images/products/cheese-yaroslav-jarlsberg.jpg",
+      "/public/images/products/cheese-cabernet-ubriaco.jpg",
+      "/public/images/products/cheese-ramses-smoked-1.jpg",
+      "/public/images/products/cheese-ramses-smoked-2.jpg",
+      "/public/images/products/cheese-cambozola.jpg",
+      "/public/images/products/cheese-albion-stilton.jpg"
+    ],
+    "goat_cheeses": [
+      "/public/images/products/goat-cheese-garrocha.jpg",
+      "/public/images/products/goat-cheese-bebe-fumado.jpg",
+      "/public/images/products/goat-cheese-pyana-gorrocha.jpg",
+      "/public/images/products/goat-cheese-kopchena-gorrocha-1.jpg", 
+      "/public/images/products/goat-cheese-kopchena-gorrocha-2.jpg",
+      "/public/images/products/goat-cheese-cabrales.jpg",
+      "/public/images/products/goat-cheese-arcoiris.jpg"
+    ],
+    "spirits": [
+      "/public/images/products/van-gogh-absinthe.png",
+      "/public/images/products/bourbon-bottle.png",
+      "/public/images/products/quince-schnapps.jpg",
+      "/public/images/products/gin-bombay.png",
+      "/public/images/products/schnapps-firmovyi.png"
+    ]
+  },
+  "site_structure": {
+    "main_pages": [
+      "Home (/index.php)",
+      "Product Catalog (/vitrina.php)", 
+      "Reviews (/vidguky.php)",
+      "Contacts (/kontakty.html)",
+      "About Farm (/pro_fermu.html)",
+      "Why Lichtenfeld (/chomu_lichtenfeld.html)",
+      "Blog (/blog/index.php)"
+    ],
+    "press_pages": [
+      "/dumskaya.html",
+      "/agravery.com.html", 
+      "/armiyainform.html"
+    ],
+    "design_elements": {
+      "layout": "Grid-based product listing",
+      "navigation": "Multi-level dropdown menu",
+      "product_cards": {
+        "components": ["Image", "Name", "Description", "Price", "Availability status", "Add to cart button"]
+      },
+      "style": "Clean, informative design focused on showcasing artisanal products"
+    }
+  },
+  "scraped_date": "2025-08-10",
+  "total_products": {
+    "cheese_sets": 2,
+    "cow_cheeses": 8, 
+    "goat_cheeses": 6,
+    "spirits_drinks": 5,
+    "total": 21
+  }
+}
