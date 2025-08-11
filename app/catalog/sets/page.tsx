@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { products } from '@/lib/products-data'
 
 export default function CheeseSetsPage() {
-  const cheeseSets = products.filter(p => p.category === 'cheese-sets')
+  const cheeseSets = products.filter(p => p.category.includes('set'))
 
   return (
     <div className="min-h-screen bg-cream-light">
@@ -17,16 +17,16 @@ export default function CheeseSetsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {cheeseSets.map((product) => (
-            <Link key={product.id} href={`/product/${product.slug}`}>
+            <Link key={product.slug} href={`/product/${product.slug}`}>
               <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden cursor-pointer group">
                 <div className="relative h-64 w-full">
                   <Image
-                    src={product.image}
-                    alt={product.name}
+                    src={product.images[0]}
+                    alt={product.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  {!product.available && (
+                  {product.status === 'out' && (
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <span className="bg-white px-3 py-1 rounded-lg text-sm font-semibold">
                         Немає в наявності
@@ -35,11 +35,11 @@ export default function CheeseSetsPage() {
                   )}
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-xl text-neutral-900 mb-2">{product.name}</h3>
-                  <p className="text-neutral-600 mb-4">{product.description}</p>
+                  <h3 className="font-bold text-xl text-neutral-900 mb-2">{product.title}</h3>
+                  <p className="text-neutral-600 mb-4">{product.shortDescription}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary-600">{product.price}</span>
-                    {product.available && (
+                    {product.status !== 'out' && (
                       <button className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
                         Замовити
                       </button>

@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 }
 
 export default function CatalogPage() {
-  const cheeseSets = products.filter(p => p.category === 'cheese-sets')
-  const cowCheeses = products.filter(p => p.category === 'cow-cheese')
-  const goatCheeses = products.filter(p => p.category === 'goat-cheese')
-  const spirits = products.filter(p => p.category === 'spirits')
+  const cheeseSets = products.filter(p => p.category.includes('set'))
+  const cowCheeses = products.filter(p => p.category.includes('cow-hard'))
+  const goatCheeses = products.filter(p => p.category.includes('goat'))
+  const spirits = products.filter(p => p.category.includes('drink'))
 
   return (
     <div className="min-h-screen bg-cream-light">
@@ -70,17 +70,17 @@ export default function CatalogPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cheeseSets.map((product) => (
-              <article key={product.id} itemScope itemType="https://schema.org/Product">
+              <article key={product.slug} itemScope itemType="https://schema.org/Product">
                 <Link href={`/product/${product.slug}`}>
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
                     <div className="relative h-56 w-full">
                       <Image
-                        src={product.image}
-                        alt={product.name}
+                        src={product.images[0]}
+                        alt={product.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      {!product.available && (
+                      {product.status === 'out' && (
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                           <span className="bg-white px-3 py-1 rounded-lg text-sm font-semibold">
                             Немає в наявності
@@ -90,10 +90,10 @@ export default function CatalogPage() {
                     </div>
                     <div className="p-5">
                       <h3 className="font-bold text-lg text-neutral-900 mb-2" itemProp="name">
-                        {product.name}
+                        {product.title}
                       </h3>
                       <p className="text-sm text-neutral-600 mb-3 line-clamp-2" itemProp="description">
-                        {product.description}
+                        {product.shortDescription}
                       </p>
                       <div className="flex items-center justify-between">
                         <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
@@ -102,7 +102,7 @@ export default function CatalogPage() {
                           </span>
                           <meta itemProp="priceCurrency" content="UAH" />
                         </div>
-                        {product.available && (
+                        {product.status !== 'out' && (
                           <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
                             В наявності
                           </span>
@@ -126,38 +126,33 @@ export default function CatalogPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cowCheeses.map((product) => (
-              <article key={product.id} itemScope itemType="https://schema.org/Product">
+              <article key={product.slug} itemScope itemType="https://schema.org/Product">
                 <Link href={`/product/${product.slug}`}>
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
                     <div className="relative h-48 w-full">
                       <Image
-                        src={product.image}
-                        alt={product.name}
+                        src={product.images[0]}
+                        alt={product.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      {!product.available && (
+                      {product.status === 'out' && (
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                           <span className="bg-white px-3 py-1 rounded-lg text-sm font-semibold">
                             Немає в наявності
                           </span>
                         </div>
                       )}
-                      {product.isSpecial && (
-                        <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                          Особливий
-                        </span>
-                      )}
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-neutral-900 mb-1" itemProp="name">
-                        {product.name}
+                        {product.title}
                       </h3>
-                      {product.nameEnglish && (
-                        <p className="text-xs text-neutral-500 mb-2">{product.nameEnglish}</p>
+                      {product.titleEn && (
+                        <p className="text-xs text-neutral-500 mb-2">{product.titleEn}</p>
                       )}
                       <p className="text-xs text-neutral-600 mb-2 line-clamp-2" itemProp="description">
-                        {product.description}
+                        {product.shortDescription}
                       </p>
                       <div className="flex items-center justify-between">
                         <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
@@ -166,7 +161,7 @@ export default function CatalogPage() {
                           </span>
                           <meta itemProp="priceCurrency" content="UAH" />
                         </div>
-                        {product.available && (
+                        {product.status !== 'out' && (
                           <span className="text-xs text-green-600 font-medium">✓</span>
                         )}
                       </div>
@@ -188,17 +183,17 @@ export default function CatalogPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {goatCheeses.map((product) => (
-              <article key={product.id} itemScope itemType="https://schema.org/Product">
+              <article key={product.slug} itemScope itemType="https://schema.org/Product">
                 <Link href={`/product/${product.slug}`}>
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group">
                     <div className="relative h-48 w-full">
                       <Image
-                        src={product.image}
-                        alt={product.name}
+                        src={product.images[0]}
+                        alt={product.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      {!product.available && (
+                      {product.status === 'out' && (
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                           <span className="bg-white px-3 py-1 rounded-lg text-sm font-semibold">
                             Немає в наявності
@@ -208,13 +203,13 @@ export default function CatalogPage() {
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-neutral-900 mb-1" itemProp="name">
-                        {product.name}
+                        {product.title}
                       </h3>
-                      {product.nameEnglish && (
-                        <p className="text-xs text-neutral-500 mb-2">{product.nameEnglish}</p>
+                      {product.titleEn && (
+                        <p className="text-xs text-neutral-500 mb-2">{product.titleEn}</p>
                       )}
                       <p className="text-xs text-neutral-600 mb-2 line-clamp-3" itemProp="description">
-                        {product.description}
+                        {product.shortDescription}
                       </p>
                       <div className="flex items-center justify-between">
                         <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
@@ -223,7 +218,7 @@ export default function CatalogPage() {
                           </span>
                           <meta itemProp="priceCurrency" content="UAH" />
                         </div>
-                        {product.available && (
+                        {product.status !== 'out' && (
                           <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded">
                             В наявності
                           </span>
@@ -252,17 +247,17 @@ export default function CatalogPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {spirits.map((product) => (
-                <article key={product.id} itemScope itemType="https://schema.org/Product">
+                <article key={product.slug} itemScope itemType="https://schema.org/Product">
                   <Link href={`/product/${product.slug}`}>
                     <div className="bg-neutral-800 rounded-xl hover:bg-neutral-700 transition-all duration-300 overflow-hidden cursor-pointer group">
                       <div className="relative h-56 bg-gradient-to-br from-neutral-700 to-neutral-900">
                         <Image
-                          src={product.image}
-                          alt={product.name}
+                          src={product.images[0]}
+                          alt={product.title}
                           fill
                           className="object-contain p-6"
                         />
-                        {!product.available && (
+                        {product.status === 'out' && (
                           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                             <span className="bg-white text-neutral-900 px-3 py-1 rounded-lg text-sm font-semibold">
                               Немає в наявності
@@ -272,13 +267,13 @@ export default function CatalogPage() {
                       </div>
                       <div className="p-5">
                         <h3 className="font-bold text-lg mb-1" itemProp="name">
-                          {product.name}
+                          {product.title}
                         </h3>
-                        {product.nameEnglish && (
-                          <p className="text-sm text-neutral-400 mb-2">{product.nameEnglish}</p>
+                        {product.titleEn && (
+                          <p className="text-sm text-neutral-400 mb-2">{product.titleEn}</p>
                         )}
                         <p className="text-sm text-neutral-300 mb-3 line-clamp-3" itemProp="description">
-                          {product.description}
+                          {product.shortDescription}
                         </p>
                         <div className="flex items-center justify-between">
                           <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
@@ -287,8 +282,8 @@ export default function CatalogPage() {
                             </span>
                             <meta itemProp="priceCurrency" content="UAH" />
                           </div>
-                          {product.volume && (
-                            <span className="text-sm text-neutral-400">{product.volume}</span>
+                          {product.weight && (
+                            <span className="text-sm text-neutral-400">{product.weight}</span>
                           )}
                         </div>
                       </div>

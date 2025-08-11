@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { products } from '@/lib/products-data'
 
 export default function BlueCheesePage() {
-  const blueCheeses = products.filter(p => 
-    p.name.toLowerCase().includes('альбіон') || 
-    p.name.toLowerCase().includes('камбоцола') ||
-    p.name.toLowerCase().includes('кабралес') ||
-    p.name.toLowerCase().includes('аркоіріс')
+  const blueCheeses = products.filter(p =>
+    p.title.toLowerCase().includes('альбіон') ||
+    p.title.toLowerCase().includes('камбоцола') ||
+    p.title.toLowerCase().includes('кабралес') ||
+    p.title.toLowerCase().includes('аркоіріс')
   )
 
   return (
@@ -22,16 +22,16 @@ export default function BlueCheesePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blueCheeses.map((product) => (
-            <Link key={product.id} href={`/product/${product.slug}`}>
+            <Link key={product.slug} href={`/product/${product.slug}`}>
               <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden cursor-pointer group">
                 <div className="relative h-48 w-full">
                   <Image
-                    src={product.image}
-                    alt={product.name}
+                    src={product.images[0]}
+                    alt={product.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  {!product.available && (
+                  {product.status === 'out' && (
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <span className="bg-white px-3 py-1 rounded-lg text-sm font-semibold">
                         Немає в наявності
@@ -40,11 +40,11 @@ export default function BlueCheesePage() {
                   )}
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-neutral-900 mb-1">{product.name}</h3>
-                  <p className="text-sm text-neutral-600 mb-2 line-clamp-2">{product.description}</p>
+                  <h3 className="font-semibold text-lg text-neutral-900 mb-1">{product.title}</h3>
+                  <p className="text-sm text-neutral-600 mb-2 line-clamp-2">{product.shortDescription}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-primary-600">{product.price}</span>
-                    {product.available && (
+                    {product.status !== 'out' && (
                       <span className="text-xs text-green-600 font-medium">В наявності</span>
                     )}
                   </div>
